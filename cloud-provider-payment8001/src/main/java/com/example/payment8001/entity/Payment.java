@@ -20,7 +20,6 @@ import java.io.Serializable;
 @Data
 public class Payment implements Serializable {
 
-
     private static final long serialVersionUID = -798435010948786660L;
 
     @ApiModelProperty("主键")

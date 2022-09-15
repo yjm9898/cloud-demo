@@ -1,6 +1,7 @@
 package com.example.payment8001.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.payment8001.entity.Payment;
 
 /**
  * <p>
@@ -11,5 +12,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2022-09-02
  */
 public interface IPaymentService extends IService<Payment> {
+
+    Payment getPaymentById(Long id);
 
 }

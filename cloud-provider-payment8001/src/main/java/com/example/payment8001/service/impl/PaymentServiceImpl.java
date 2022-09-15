@@ -1,8 +1,9 @@
 package com.example.payment8001.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.example.payment8001.entity.Payment;
 import com.example.payment8001.mapper.PaymentMapper;
 import com.example.payment8001.service.IPaymentService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,4 +17,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class PaymentServiceImpl extends ServiceImpl<PaymentMapper, Payment> implements IPaymentService {
 
+    @Override
+    public Payment getPaymentById(Long id) {
+        return this.getById(id);
+    }
 }

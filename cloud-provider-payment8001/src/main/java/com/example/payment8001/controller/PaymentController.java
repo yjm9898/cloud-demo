@@ -7,9 +7,7 @@ import com.example.payment8001.service.IPaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -31,12 +29,13 @@ public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
 
-//    public CommonResult create(Payment payment) {
-//
-//    }
+    @PostMapping("/payment/create")
+    public CommonResult create(@RequestBody Payment payment) {
+        paymentService.save(payment);
+        return new CommonResult(200, "新建成功" + serverPort, null);
+    }
 
-
-    @PostMapping("/payment/get/{id}")
+    @GetMapping("/payment/get/{id}")
     public CommonResult paymentById(@PathVariable("id") Long id) {
         Payment paymentById = paymentService.getPaymentById(id);
         log.info("查询的结果" + paymentById);

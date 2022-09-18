@@ -1,4 +1,4 @@
-package com.example.payment8001.entity;
+package com.example.common.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -16,6 +16,7 @@ import java.io.Serializable;
  * @author jiemin
  * @since 2022-09-02
  */
+
 @ApiModel(value = "Payment对象", description = "支付表")
 @Data
 public class Payment implements Serializable {

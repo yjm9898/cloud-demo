@@ -1,7 +1,7 @@
 package com.example.payment8001.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.payment8001.entity.Payment;
+import com.example.common.entity.Payment;
 import com.example.payment8001.mapper.PaymentMapper;
 import com.example.payment8001.service.IPaymentService;
 import org.springframework.stereotype.Service;

@@ -1,8 +1,8 @@
 package com.example.payment8001.controller;
 
 
-import com.example.payment8001.common.CommonResult;
-import com.example.payment8001.entity.Payment;
+import com.example.common.entity.CommonResult;
+import com.example.common.entity.Payment;
 import com.example.payment8001.service.IPaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @Slf4j
-
 public class PaymentController {
 
 

@@ -1,7 +1,7 @@
 package com.example.payment8001.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.payment8001.entity.Payment;
+import com.example.common.entity.Payment;
 
 /**
  * <p>

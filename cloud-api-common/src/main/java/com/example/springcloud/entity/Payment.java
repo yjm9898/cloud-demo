@@ -1,4 +1,4 @@
-package com.example.common.entity;
+package com.example.springcloud.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

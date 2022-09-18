@@ -1,7 +1,7 @@
 package com.example.payment8001.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.example.payment8001.entity.Payment;
+import com.example.common.entity.Payment;
 
 /**
  * <p>

@@ -1,4 +1,4 @@
-package com.example.payment8001.config;
+package com.example.springcloud.config;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Configuration
-@MapperScan(basePackages = "com.example.payment8001.mapper")
+@MapperScan(basePackages = "com.example.springcloud.mapper")
 public class MybatisPlusConfig {
 
     @Bean

@@ -1,13 +1,13 @@
-package com.example.payment8001;
+package com.example.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Payment8001Application {
+public class PaymentMain8001 {
 
     public static void main(String[] args) {
-        SpringApplication.run(Payment8001Application.class, args);
+        SpringApplication.run(PaymentMain8001.class, args);
     }
 
 }

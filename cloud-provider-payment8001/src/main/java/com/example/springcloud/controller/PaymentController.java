@@ -1,9 +1,9 @@
-package com.example.payment8001.controller;
+package com.example.springcloud.controller;
 
 
-import com.example.common.entity.CommonResult;
-import com.example.common.entity.Payment;
-import com.example.payment8001.service.IPaymentService;
+import com.example.springcloud.entity.CommonResult;
+import com.example.springcloud.entity.Payment;
+import com.example.springcloud.service.IPaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

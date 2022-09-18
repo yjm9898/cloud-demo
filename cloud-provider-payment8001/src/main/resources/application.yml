@@ -11,6 +11,7 @@ spring:
     username: root
     password: pass1234
 
-mybatis:
+mybatis-plus:
   mapperLocations: classpath:mapper/*.xml
-  type-aliases-package: com.example.payment8081.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

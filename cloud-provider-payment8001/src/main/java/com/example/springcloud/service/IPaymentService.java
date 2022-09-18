@@ -1,7 +1,7 @@
-package com.example.payment8001.service;
+package com.example.springcloud.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.common.entity.Payment;
+import com.example.springcloud.entity.Payment;
 
 /**
  * <p>

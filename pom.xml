@@ -13,6 +13,7 @@
     <modules>
         <module>cloud-provider-payment8001</module>
         <module>cloud-consumer-order80</module>
+        <module>cloud-api-common</module>
     </modules>
 
 
@@ -106,14 +107,6 @@
             </dependency>
 
 
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-devtools</artifactId>
-                <version>${project.parent.version}</version>
-                <scope>runtime</scope>
-                <optional>true</optional>
-            </dependency>
-
         </dependencies>
     </dependencyManagement>
 
@@ -123,6 +116,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <addResources>true</addResources>
+                </configuration>
             </plugin>
         </plugins>
     </build>

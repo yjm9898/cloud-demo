@@ -1,7 +1,7 @@
-package com.example.payment8001.mapper;
+package com.example.springcloud.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.example.common.entity.Payment;
+import com.example.springcloud.entity.Payment;
 
 /**
  * <p>

@@ -1,4 +1,4 @@
-package com.example.payment8001;
+package com.example.springcloud;
 
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;

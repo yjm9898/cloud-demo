@@ -1,13 +1,13 @@
 server:
-  port: 7001
+  port: 7002
 spring:
   application:
-    name: cloud-eureka-service1
+    name: cloud-eureka-service2
 
 
 eureka:
   instance:
-    hostname: eureka7001.com
+    hostname: eureka7002.com
   client:
     register-with-eureka: false
     fetch-registry: false

@@ -141,6 +141,93 @@ server:
 
 
 
+新建cloud-provider-payment8004模块
+
+修改POM
+
+```Java
+ <dependencies>
+        <dependency>
+            <groupId>com.example.springcloud</groupId>
+            <artifactId>cloud-api-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!--SpringBoot整合Zookeeper客户端-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zookeeper-discovery</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+```
+
+修改配置文件YML
+
+```yaml
+server:
+  # 8004表示注册到zookeeper服务器的支付服务提供者端口号
+  port: 8004
+
+
+spring:
+  application:
+    # 服务别名---注册zookeeper到注册中心的名称
+    name: cloud-provider-payment
+  cloud:
+    zookeeper:
+      # 默认localhost:2181
+      connect-string: localhost:2181
+
+```
+
+修改主启动类
+
+```java
+
+@EnableDiscoveryClient //该注解用于向使用zookeeper. consul作为注册中心时注册服务
+@SpringBootApplication
+public class PaymentMain8004 {
+
+    public static void main(String[] args) {
+        SpringApplication.run(PaymentMain8004.class, args);
+    }
+
+}
+```
+
+启动服务提供者之后，用zkcli查看当前节点信息
+
+![image-20220924175357728](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220924175357728.png)
+
+
+
 
 
 

@@ -67,4 +67,37 @@ eureka:
 
 服务调用端，使用RestTemplate 组件。
 
-添加@LoadBalanced
+#### 添加@LoadBalanced
+
+实现应用调用的负载均衡
+
+
+
+#### actuator微服务信息完善
+
+1. **主机名称**修改
+
+```yml
+eureka:
+  instance:
+    instance-id: payment8001
+```
+
+这样在eureka注册中心就可以显示 主机名，ip，端口号
+
+2. 访问信息有IP
+
+```yml
+eureka:
+  instance:
+    prefer-ip-address: true  #访问路径可以显示IP
+```
+
+如下图所示:
+
+![image-20220923160831297](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220923160831297.png)
+
+
+
+
+

@@ -126,3 +126,22 @@ public Object discovery() {
 
 ![image-20220924133919706](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220924133919706.png)
 
+
+
+禁用自我保护
+
+```yaml
+server:
+  enable-self-preservation: false    #禁用自我保护
+```
+
+
+
+### eureka 停止更新，配置Zookeeper
+
+
+
+
+
+
+

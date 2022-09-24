@@ -98,6 +98,31 @@ eureka:
 ![image-20220923160831297](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220923160831297.png)
 
 
+#### 服务发现Discovery
+1. 注册在eureka里面的微服务，可以通过服务发现来获得该服务的信息.
+```java
+@Resource
+private DiscoveryClient discoveryClient;
 
+@GetMapping("/payment/discovery")
+public Object discovery() {
+        List<String> services = discoveryClient.getServices();
 
+        services.forEach(x -> {
+            log.info("******element****" + x);
+        });
+
+        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
+
+        for (ServiceInstance instance : instances) {
+            log.info(instance.getInstanceId() + "\t" + instance.getHost() + "\t" + instance.getPort() + instance.getUri());
+        }
+        return this.discoveryClient;
+    }
+```
+2. 服务发现Discovery注册
+
+@EnableDiscoveryClient
+
+![image-20220924133919706](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220924133919706.png)
 

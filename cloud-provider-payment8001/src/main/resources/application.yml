@@ -24,3 +24,4 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: payment8001
+    lease-renewal-interval-in-seconds: 1   #eureka客户端像服务端发送心跳时间间隔，单位为秒

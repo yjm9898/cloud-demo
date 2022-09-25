@@ -236,6 +236,18 @@ zookeeper是一个分布式协调工具，可以实现注册中心功能。
 
 
 
+安装启动
+
+```shell
+.\consul agent -dev
+```
+
+
+
+http://localhost:8500/ui/dc1/services 查看当前consul 管理后台
+
+![image-20220925101547375](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220925101547375.png)
+
 
 
 

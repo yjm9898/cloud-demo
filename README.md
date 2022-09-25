@@ -137,7 +137,7 @@ server:
 
 
 
-### eureka 停止更新，配置Zookeeper
+### Zookeeper服务注册与发现
 
 
 
@@ -231,6 +231,12 @@ public class PaymentMain8004 {
 zookeeper是一个分布式协调工具，可以实现注册中心功能。
 
 ![image-20220925094227530](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220925094227530.png)
+
+### Consul 服务注册与发现
+
+
+
+
 
 
 

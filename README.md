@@ -399,3 +399,9 @@ POM文件
 ![image-20220926110256428](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220926110256428.png)
 
 ![image-20220926110339584](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220926110339584.png)
+
+#### 三个注册中心对比
+
+![image-20220926111307585](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220926111307585.png)
+
+![image-20220926111329180](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220926111329180.png)

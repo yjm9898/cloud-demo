@@ -100,7 +100,7 @@ eureka:
 
 #### 服务发现Discovery
 1. 注册在eureka里面的微服务，可以通过服务发现来获得该服务的信息.
-```java
+```xml
 @Resource
 private DiscoveryClient discoveryClient;
 
@@ -145,7 +145,7 @@ server:
 
 修改POM
 
-```Java
+```xml
  <dependencies>
         <dependency>
             <groupId>com.example.springcloud</groupId>
@@ -250,5 +250,152 @@ http://localhost:8500/ui/dc1/services 查看当前consul 管理后台
 
 
 
+#### 服务提供者搭建 provider-payment8006
+
+![image-20220926105109669](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220926105109669.png)
+
+```yaml
+server:
+  # 8006表示注册到consul服务器的支付服务提供者端口号
+  port: 8006
 
 
+spring:
+  application:
+    # 服务别名---注册zookeeper到注册中心的名称
+    name: cloud-provider-payment
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        hostname: 127.0.0.1
+        service-name: ${spring.application.name}
+
+
+```
+
+```xml
+<dependencies>
+        <dependency>
+            <groupId>com.example.springcloud</groupId>
+            <artifactId>cloud-api-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--SpringBoot整合Zookeeper客户端-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+```
+
+
+
+#### 服务消费者搭建 consumerconsul-order80
+
+![image-20220926105140262](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220926105140262.png)
+
+![image-20220926105148671](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220926105148671.png)
+
+配置文件
+```yaml
+server:
+  port: 80
+spring:
+  application:
+    name: cloud-consumer-order
+  cloud:
+    consul:
+      # consul注册中心地址
+      host: localhost
+      port: 8500
+      discovery:
+        hostname: 127.0.0.1
+        service-name: ${spring.application.name}
+```
+POM文件
+```xml
+<dependencies>
+
+        <dependency>
+            <groupId>com.example.springcloud</groupId>
+            <artifactId>cloud-api-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--SpringBoot整合consul客户端-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+```
+
+
+
+运行效果
+
+![image-20220926110256428](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220926110256428.png)
+
+![image-20220926110339584](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220926110339584.png)

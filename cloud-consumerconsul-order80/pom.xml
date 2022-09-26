@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-provider-payment8006</artifactId>
+    <artifactId>cloud-consumerconsul-order80</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -17,7 +17,6 @@
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>com.example.springcloud</groupId>
             <artifactId>cloud-api-common</artifactId>
@@ -29,11 +28,12 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!--SpringBoot整合consul客户端-->
+        <!--SpringBoot整合Zookeeper客户端-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-consul-discovery</artifactId>
         </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -46,13 +46,11 @@
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

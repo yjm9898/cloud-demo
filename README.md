@@ -405,3 +405,17 @@ POM文件
 ![image-20220926111307585](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220926111307585.png)
 
 ![image-20220926111329180](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220926111329180.png)
+
+### Robbin负载均衡调用
+
+![image-20220926143154431](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220926143154431.png)
+
+进程内LB: 将LB逻辑集成到消费方，消费方从注册中心获知哪些地址可用，然后自己再从这些地址选择一个合适的服务器。Ribbon属于进程内LB, 它只是一个类库。
+
+![image-20220926163040419](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220926163040419.png)
+
+负载均衡算法
+
+![image-20220927161110705](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220927161110705.png)
+
+![image-20220927161405248](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220927161405248.png)

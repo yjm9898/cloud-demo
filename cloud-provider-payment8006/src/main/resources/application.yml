@@ -6,7 +6,7 @@ server:
 spring:
   application:
     # 服务别名---注册zookeeper到注册中心的名称
-    name: cloud-provider-payment
+    name: consul-provider-payment
   cloud:
     consul:
       host: localhost

@@ -419,3 +419,35 @@ POM文件
 ![image-20220927161110705](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220927161110705.png)
 
 ![image-20220927161405248](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220927161405248.png)
+
+
+
+
+
+### OpenFeign服务接口调用
+
+* OpenFeign是什么
+
+  Feign是一个声明式的**Web服务客户端**，让编写Web服务客户端变得非常容易，只需创建一个接口并在接口上添加注解即可
+
+* 能干嘛
+
+  ![image-20221006103822951](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20221006103822951.png)
+
+* Feign和OpenFeign两者区别
+
+  ![image-20221006103948983](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20221006103948983.png)
+
+Feign使用步骤：
+
+接口+注解
+
+Feign永远是在消费端使用的
+
+建module, 改POM, 改YML，改主启动类(@EnableFeignClients)
+
+新建一个PaymentFeignService接口，接口上添加注解(@FeignClient(value="CLOUD-PAYMENT-SERVICE")),
+
+![image-20221006105140457](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20221006105140457.png)
+
+![image-20221006105314037](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20221006105314037.png)

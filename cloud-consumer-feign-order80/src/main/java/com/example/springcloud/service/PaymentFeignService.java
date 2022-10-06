@@ -17,9 +17,9 @@ public interface PaymentFeignService {
 
     //Feign接口中的方法要与目标服务中的Controller中的方法完全一致
     @GetMapping(value = "/payment/get/{id}")
-    public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id);
+    CommonResult<Payment> getPaymentById(@PathVariable("id") Long id);
 
     @GetMapping(value = "/payment/feign/timeout")
-    public String paymentFeignTimeout();
+    String paymentFeignTimeout();
 
 }

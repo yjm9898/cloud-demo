@@ -7,5 +7,11 @@ eureka:
     service-url:
 #      单机版
       defaultZone: http://localhost:7001/eureka
-
-fei
+feign:
+  client:
+    config:
+      default:
+#        建立连接所用时间，适用于网络状况正常情况下，两端连接所需时间
+        connect-timeout: 5000
+#        指建立连接后从服务端读取到可用资源所用时间
+        read-timeout: 5000

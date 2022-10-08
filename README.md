@@ -466,17 +466,42 @@ OpenFeign默认等待一秒钟，超时报错.
 
 ![image-20221008163359619](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20221008163359619.png)
 
-修改Feign 超时配置，服务调用端修改超时时间。
+修改Feign 超时配置，服务调用端修改超时时间，就能正常调用耗时服务接口
 
-Ribbon
+![image-20221008181312202](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20221008181312202.png)
+
+![image-20221008181211449](C:\Users\jiemin\AppData\Roaming\Typora\typora-user-images\image-20221008181211449.png)
+
+```yaml
+server:
+  port: 80
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    service-url:
+#      单机版
+      defaultZone: http://localhost:7001/eureka
+feign:
+  client:
+    config:
+      default:
+#        建立连接所用时间，适用于网络状况正常情况下，两端连接所需时间
+        connect-timeout: 5000
+#        指建立连接后从服务端读取到可用资源所用时间
+        read-timeout: 5000
+
+```
 
 
 
 ### Hystrix 熔断限流
 
+是什么？能干嘛？操作步骤？
+
 * 服务降级
 
-如下情况回出现服务降级
+如下情况将出现服务降级
 
 1. 程序运行异常
 2. 超时

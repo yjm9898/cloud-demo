@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * <p>
@@ -68,6 +69,14 @@ public class PaymentController {
         }
 
         return this.discoveryClient;
+    }
+
+    //OpenFeign超时控制演示
+    //OpenFeign默认等待1秒钟，超过则报错
+    @GetMapping(value = "/payment/feign/timeout")
+    public String paymentFeignTimeout() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(3);
+        return serverPort;
     }
 
 }

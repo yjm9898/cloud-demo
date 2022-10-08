@@ -5,4 +5,7 @@ eureka:
     register-with-eureka: false
     fetch-registry: true
     service-url:
-      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+#      单机版
+      defaultZone: http://localhost:7001/eureka
+
+fei

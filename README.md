@@ -414,6 +414,10 @@ POM文件
 
 ![image-20220926163040419](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220926163040419.png)
 
+Ribbon核心组件IRule实现类
+
+![image-20221008170519103](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20221008170519103.png)
+
 负载均衡算法
 
 ![image-20220927161110705](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20220927161110705.png)
@@ -446,8 +450,42 @@ Feign永远是在消费端使用的
 
 建module, 改POM, 改YML，改主启动类(@EnableFeignClients)
 
-新建一个PaymentFeignService接口，接口上添加注解(@FeignClient(value="CLOUD-PAYMENT-SERVICE")),
+新建一个PaymentFeignService接口，**接口上添加注解**(@FeignClient(value="CLOUD-PAYMENT-SERVICE")),
 
 ![image-20221006105140457](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20221006105140457.png)
 
 ![image-20221006105314037](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20221006105314037.png)
+
+
+
+Feign超时编写
+
+在服务提供方故意编写一个耗时服务，服务调用者会出现Read timed out 报错.
+
+OpenFeign默认等待一秒钟，超时报错.
+
+![image-20221008163359619](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20221008163359619.png)
+
+修改Feign 超时配置，服务调用端修改超时时间。
+
+Ribbon
+
+
+
+### Hystrix 熔断限流
+
+* 服务降级
+
+如下情况回出现服务降级
+
+1. 程序运行异常
+2. 超时
+3. 服务熔断触发服务降级
+4. 线程池、信号量也会导致服务降级
+
+* 服务熔断
+
+
+
+* 服务限流
+

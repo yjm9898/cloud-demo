@@ -497,9 +497,9 @@ feign:
 
 ### Hystrix 熔断限流
 
-是什么？能干嘛？操作步骤？
+是什么？能干嘛？操作步骤？  (理论，实操，小总结)
 
-* 服务降级
+* 服务降级   fallback
 
 如下情况将出现服务降级
 
@@ -508,9 +508,10 @@ feign:
 3. 服务熔断触发服务降级
 4. 线程池、信号量也会导致服务降级
 
-* 服务熔断
+* 服务熔断  break
 
 
 
-* 服务限流
+* 服务限流 flow limit
 
+![image-20221008214454802](https://ossjiemin.oss-cn-hangzhou.aliyuncs.com/img/image-20221008214454802.png)

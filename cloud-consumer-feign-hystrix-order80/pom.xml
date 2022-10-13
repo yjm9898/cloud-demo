@@ -17,6 +17,13 @@
     </properties>
 
     <dependencies>
+
+        <!-- hystrix  降级、熔断、限流 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+
         <!--openfeign-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

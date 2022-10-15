@@ -55,7 +55,7 @@ public class PaymentService {
     @HystrixCommand(
             fallbackMethod = "paymentCircuitBreaker_fallback", commandProperties = {
             @HystrixProperty(name = "circuitBreaker.enabled", value = "true"),                       // 是否开启熔断器
-            @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),         // 统计时间窗内请求次数
+            @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "5"),         // 统计时间窗内请求次数
             @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000"),  // 休眠时间窗
             @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60"),     //  统计时间窗内，请求失败率达到60%时进入熔断状态
     }

@@ -33,18 +33,18 @@ public class OrderController {
      * @return
      */
     @GetMapping("/consumer/payment/hystrix/timeout/{id}")
-    @HystrixCommand(fallbackMethod = "paymentTimeOutFallbackMethod", commandProperties = {
-            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1500")
-    })
+//    @HystrixCommand(fallbackMethod = "paymentTimeOutFallbackMethod", commandProperties = {
+//            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1500")
+//    })
     CommonResult<String> paymentInfo_TimeOut(@PathVariable("id") Integer id) {
         String res = paymentFeign.paymentInfo_TimeOut(id);
         return new CommonResult<>(200, res);
     }
 
 
-    public CommonResult<String> paymentTimeOutFallbackMethod(@PathVariable("id") Integer id) {
-        return new CommonResult<>(200, "我是消费者80,对方支付系统繁忙请10秒种后再试或者自己运行出错请检查自己,o(╥﹏╥)o");
-    }
+//    public CommonResult<String> paymentTimeOutFallbackMethod(@PathVariable("id") Integer id) {
+//        return new CommonResult<>(200, "我是消费者80,对方支付系统繁忙请10秒种后再试或者自己运行出错请检查自己,o(╥﹏╥)o");
+//    }
 
 
 }

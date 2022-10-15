@@ -48,14 +48,16 @@ public class PaymentService {
      *
      * @param id
      * @return
+     *
+     * 熔断名称：  统计时间窗、 休眠时间窗、  请求总数阈值、   请求失败率阈值
      */
     // ============> 服务熔断,服务异常、超时、
     @HystrixCommand(
             fallbackMethod = "paymentCircuitBreaker_fallback", commandProperties = {
-            @HystrixProperty(name = "circuitBreaker.enabled", value = "true"),                       //是否开启熔断器
+            @HystrixProperty(name = "circuitBreaker.enabled", value = "true"),                       // 是否开启熔断器
             @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),         // 统计时间窗内请求次数
-            @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000"),  //休眠时间窗口期
-            @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60"),     //在统计时间窗口期内，请求失败率达到60%时进入熔断状态
+            @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000"),  // 休眠时间窗
+            @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60"),     //  统计时间窗内，请求失败率达到60%时进入熔断状态
     }
     )
     public String paymentCircuitBreaker(Integer id) {

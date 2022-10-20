@@ -9,5 +9,9 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:7001/eureka
-
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'hystrix.stream'
+      base-path: /

@@ -1,3 +1,18 @@
 server:
   port: 9001
 
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: hystrix-dashboard
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
+
+
+spring:
+  application:
+    name: hystrix-dashboard

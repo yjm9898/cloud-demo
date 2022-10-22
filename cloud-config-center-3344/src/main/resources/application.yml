@@ -1,0 +1,25 @@
+server:
+  port: 3344
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+    instance-id: cloudConfigCenter3344
+
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/yinjm/springcloud-config.git
+          username: 13548186703@139.com
+          password: uWnwr8Ks43eh
+          search-paths: config
+          default-label: master
+

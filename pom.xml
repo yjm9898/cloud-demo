@@ -28,6 +28,7 @@
         <module>juc-project</module>
         <module>cloud-consumer-hystrix-dashboard9001</module>
         <module>cloud-gateway-gateway9527</module>
+        <module>cloud-config-center-3344</module>
     </modules>
 
 

@@ -10,6 +10,12 @@ spring:
     url: jdbc:mysql://localhost:3306/quickbi?useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true&serverTimezone=GMT%2B8
     username: root
     password: pass1234
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:9911
+      datasource:
+
 
 mybatis-plus:
   mapperLocations: classpath:mapper/*.xml

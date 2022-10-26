@@ -19,6 +19,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-datasource-nacos</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.example.springcloud</groupId>
             <artifactId>cloud-api-common</artifactId>
             <version>${project.version}</version>

@@ -2,12 +2,14 @@ package com.example.springcloud.controller;
 
 import com.example.springcloud.entity.CommonResult;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Created by jiemin on 2022/10/28 14:26
  */
+@RefreshScope
 @RestController
 public class ConfigController {
 

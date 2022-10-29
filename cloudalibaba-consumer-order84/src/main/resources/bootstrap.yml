@@ -3,8 +3,15 @@ server:
 
 spring:
   application:
-    name: nacos-order-consumer84
+    name: example
   cloud:
     nacos:
       discovery:
         server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+
+
+
+# ${spring.application.name}-${spring.profiles.active}.${file-extension}

@@ -1,0 +1,4 @@
+# nacos 注册配置,  使用DataID方案来区分不同环境配置文件
+spring:
+  profiles:
+    active: test
